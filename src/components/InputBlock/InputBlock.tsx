@@ -1,5 +1,6 @@
 import styles from "./InputBlock.module.css";
 import {DetailedHTMLProps, FC, InputHTMLAttributes} from "react";
+import InputMask from 'react-input-mask';
 
 type DefaultInputPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
