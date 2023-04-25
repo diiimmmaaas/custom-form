@@ -11,7 +11,6 @@ type CustomCheckboxPropsType = {
 export const CustomCheckbox: FC<CustomCheckboxPropsType> = ({
                                                               options,
                                                               title,
-                                                              name,
                                                               required, ...restProps
                                                             }) => {
   return (
