@@ -34,7 +34,7 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
 Если услуг много,расписать каждую
 Написать расписание
 Опишите в чём ваше преимущество перед конкурентами
-Техника безопасности "
+Техника безопасности (в категории Активный отдых)"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.descriptionLeisure}
@@ -45,7 +45,7 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
         )}
         <CustomCheckbox
             name='waterLeisure'
-            title="Водный активный отдых"
+            title="Водный активный отдых (в категории Активный отдых)"
             options={[
               {id: 1, title: "Рафтинг"},
               {id: 2, title: "Каноэ"},
@@ -54,7 +54,7 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
         />
         <CustomCheckbox
             name='winterLeisure'
-            title="Зимний активный отдых"
+            title="Зимний активный отдых (в категории Активный отдых)"
             options={[
               {id: 1, title: "Санки/тюбинг"},
               {id: 2, title: "Горнолыжный спорт"},
@@ -64,7 +64,7 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
         />
         <CustomCheckbox
             name='extremeLeisure'
-            title="Экстремальный отдых"
+            title="Экстремальный отдых (в категории Активный отдых)"
             options={[
               {id: 1, title: "Веревочный парк"},
               {id: 2, title: "Экстрим-парк"},
@@ -75,7 +75,7 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
         />
         <CustomCheckbox
             name='landLeisure'
-            title="Сухопутный активный отдых"
+            title="Сухопутный активный отдых (в категории Активный отдых)"
             options={[
               {id: 1, title: "Прогулки на лошадях"},
               {id: 2, title: "Квадроциклы"},

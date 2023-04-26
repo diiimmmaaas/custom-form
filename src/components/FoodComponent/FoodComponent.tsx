@@ -34,7 +34,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
 Укажите особенности заведения: возможно из вашего заведения открывается красивый вид,есть террасса,у вас можно отпраздновать большое торжество,вы устраиваете вечеринки или наоборот у вас тихое семейное заведение
 Курят ли в вашем заведении
 В чем ваше преимущество перед вашими конкурентами
-Расстояние до достопримечательностей"
+Расстояние до достопримечательностей (в категории Питание)"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.descriptionFood}
@@ -48,7 +48,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
             type="scheduleFood"
             name="scheduleFood"
             placeholder="Введите данные"
-            title="Укажите часы работы"
+            title="Укажите часы работы (в категории Питание)"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.scheduleFood}
@@ -60,7 +60,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
         <CustomCheckbox
             name='servicesFood'
             title="Далее отметьте услуги, которые вы оказываете
-Данные услуги будут отображаться в фильтрах, по которым ваш клиент сможет вас найти"
+Данные услуги будут отображаться в фильтрах, по которым ваш клиент сможет вас найти (в категории Питание)"
             options={[
               {id: 1, title: "Вид на горы"},
               {id: 2, title: "Выход к водоему"},
@@ -71,7 +71,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
         />
         <CustomCheckbox
             name='typesFood'
-            title="Тип заведения"
+            title="Тип заведения (в категории Питание)"
             options={[
               {id: 1, title: "Ресторан"},
               {id: 2, title: "Быстрый перекус"},
@@ -84,7 +84,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
         />
         <CustomCheckbox
             name='dishesFood'
-            title="Блюда"
+            title="Блюда (в категории Питание)"
             options={[
               {id: 1, title: "Шашлык"},
               {id: 2, title: "Пицца"},
@@ -96,7 +96,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
         />
         <CustomCheckbox
             name='featuresOfInstitutionFood'
-            title="Особенности заведения "
+            title="Особенности заведения (в категории Питание)"
             options={[
               {id: 1, title: "Можно заказать кальян"},
               {id: 2, title: "Бронирование"},
@@ -114,7 +114,7 @@ const FoodComponent: FC<FoodComponentPropsType> = ({
         />
         <CustomCheckbox
             name='nutritionalFeaturesFood'
-            title="Пищевые особенности"
+            title="Пищевые особенности (в категории Питание)"
             options={[
               {id: 1, title: "Подходит для вегетерианцев"},
               {id: 2, title: "Халяльная кухня"},

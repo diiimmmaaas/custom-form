@@ -21,11 +21,6 @@ export default function Home() {
   const [visibleLeisureBlock, setVisibleLeisureBlock] = useState(false);
   const [visibleRestingPlacesBlock, setVisibleRestingPlacesBlock] = useState(false);
 
-  console.log('visibleResidenceBlock', visibleResidenceBlock);
-  console.log('visibleFoodBlock', visibleFoodBlock);
-  console.log('visibleLeisureBlock', visibleLeisureBlock);
-  console.log('visibleRestingPlacesBlock', visibleRestingPlacesBlock);
-
   let formSchema = object({
     email: string().email("Неправильно введены данные почты").required("Email является" +
         " обязательным полем"),
@@ -35,7 +30,110 @@ export default function Home() {
   });
 
   const handleSubmitValues = async (values: FormikValues) => {
-    console.log(values);
+    const sendedObject = {
+      email: {value: values.email, translate: "Почта"},
+      companyName: {
+        value: values.companyName, translate: "Название юр лица или ИП/" +
+            " ИНН/ ФИО" +
+            " Руководителя/ ФИО лица, с которым мы общаемся по вопросу размещения"
+      },
+      privateNumber: {
+        value: values.privateNumber,
+        translate: "Номер телефона для нашей с вами связи"
+      },
+      publicNumber: {
+        value: values.publicNumber, translate: "Номер телефона, по" +
+            " которому ваши клиенты смогут с вами связаться"
+      },
+      publicEmail: {
+        value: values.publicEmail, translate: "Электронная почта, по" +
+            " которой ваши клиенты смогут с вами связаться"
+      },
+      site: {value: values.site, translate: "Ссылка на сайт"},
+      vk: {value: values.vk, translate: "Страница в ВКОНТАКТЕ (ссылка)\n"},
+      telegram: {value: values.telegram, translate: "Ссылка на Telegtam"},
+      instagram: {value: values.instagram, translate: "Cсылка на Instsgram"},
+      title: {
+        value: values.title,
+        translate: "Название  (компании, отеля,ресторана, гостины,глемпинга и т.д.)"
+      },
+      address: {value: values.address, translate: "Адрес"},
+      media: {value: values.media, translate: "Ссылка на медиа файлы"},
+      otherInformation: {value: values.otherInformation, translate: "Другая информация"},
+      checkedCategory: {value: values.checkedCategory, translate: "Выбранные категории"},
+      typeOfLocation: {
+        value: values.typeOfLocation, translate: "Тип размещения" +
+            " (гостиница,отель,глэмпинг,хостел,кемпинг,туристическая база,домики и" +
+            " тд.д.) (в категории Проживание)"
+      },
+      descriptionResidence: {
+        value: values.descriptionResidence, translate: "Подробной" +
+            " описание: -Как давно вы работаете, если давно, обновлялся ли номерной" +
+            " -Что есть у вас территории(бассейн, водоем, детская площадка, беседки, мангальная зона, баня, SPA, ресторан, кафе) -Категория звездности, категории номерного фонда -Оснащени номеров -Дополнительные услуги -В чем ваше преимущество перед вашими конкурентами Расстояние до достопримечательностей Максимально подробное описание ваших услуг (в категории Проживание)"
+      },
+      scheduleResidence: {
+        value: values.scheduleResidence, translate: "Часы работы" +
+            " стойки регистрации/ Часы заезда и выезда/ Услуга РАННИЙ ЗАЕЗД/ПОЗДНИЙ" +
+            " ВЫЕЗД (в категории Проживание)"
+      },
+      servicesResidence: {
+        value: values.servicesResidence, translate: "услуги, которые" +
+            " вы оказываете Данные услуги будут отображаться в фильтрах, по которым" +
+            " ваш клиент сможет вас найти (в категории Проживание)"
+      },
+      waterProceduresResidence: {
+        value: values.waterProceduresResidence,
+        translate: "Водные процедуры (в категории Проживание)"
+      },
+      rentResidence: {
+        value: values.rentResidence, translate: "Прокат (в категории Проживание)"
+      },
+      foodResidence: {
+        value: values.foodResidence, translate: "Питание (в категории Проживание)"
+      },
+      transferResidence: {value: values.transferResidence, translate: "Трансфер (в категории Проживание)"},
+      attendanceResidence: {value: values.attendanceResidence, translate: "Услуги (в категории Проживание)"},
+      descriptionFood: {value: values.descriptionFood, translate: "Какой тип заведения,какая кухня,какие используете продукты, какие блюда готовите\n" +
+            "Укажите особенности заведения: возможно из вашего заведения открывается красивый вид,есть террасса,у вас можно отпраздновать большое торжество,вы устраиваете вечеринки или наоборот у вас тихое семейное заведение\n" +
+            "Курят ли в вашем заведении\n" +
+            "В чем ваше преимущество перед вашими конкурентами\n" +
+            "Расстояние до достопримечательностей (в категории Питание)"},
+      scheduleFood: {value: values.scheduleFood, translate: "Укажите часы работы (в категории Питание)"},
+      servicesFood: {value: values.servicesFood, translate: "Услуги, которые вы" +
+            " оказываете\n" +
+            "Данные услуги будут отображаться в фильтрах, по которым ваш клиент сможет" +
+            " вас найти (в категории Питание)"},
+      typesFood: {value: values.typesFood, translate: "Тип заведения (в категории Питание)"},
+      dishesFood: {value: values.dishesFood, translate: "Блюда (в категории Питание)"},
+      featuresOfInstitutionFood: {
+        value: values.featuresOfInstitutionFood,
+        translate: "Особенности заведения (в категории Питание)"
+      },
+      nutritionalFeaturesFood: {
+        value: values.nutritionalFeaturesFood,
+        translate: "Пищевые особенности (в категории Питание)"
+      },
+      descriptionLeisure: {value: values.descriptionLeisure, translate: "Какие именно вы оказываете услуги\n" +
+            "Если услуг много,расписать каждую\n" +
+            "Написать расписание\n" +
+            "Опишите в чём ваше преимущество перед конкурентами\n" +
+            "Техника безопасности (в категории Активный отдых)"},
+      waterLeisure: {value: values.waterLeisure, translate: "Водный активный отдых (в категории Активный отдых)"},
+      winterLeisure: {value: values.winterLeisure, translate: "Зимний активный отдых (в категории Активный отдых)"},
+      extremeLeisure: {value: values.extremeLeisure, translate: "Экстремальный отдых (в категории Активный отдых)"},
+      landLeisure: {value: values.landLeisure, translate: "Сухопутный активный отдых (в категории Активный отдых)"},
+      descriptionRestingPlaces: {
+        value: values.descriptionRestingPlaces,
+        translate: "Какие именно вы оказываете услуги/\n" +
+            "Если услуг много,расписать каждую/\n" +
+            "Написать расписание/\n" +
+            "Опишите в чём ваше преимущество перед конкурентами/\n" +
+            "Техника безопасности (в категории Места проживание)"
+      },
+    };
+
+
+    console.log(sendedObject);
   };
 
   return (
@@ -74,24 +172,24 @@ export default function Home() {
                 typeOfLocation: "",
                 descriptionResidence: "",
                 scheduleResidence: "",
-                servicesResidence: "",
-                waterProceduresResidence: "",
-                rentResidence: "",
-                foodResidence: "",
-                transferResidence: "",
-                attendanceResidence: "",
+                servicesResidence: [],
+                waterProceduresResidence: [],
+                rentResidence: [],
+                foodResidence: [],
+                transferResidence: [],
+                attendanceResidence: [],
                 descriptionFood: "",
                 scheduleFood: "",
-                servicesFood: "",
-                typesFood: "",
-                dishesFood: "",
-                featuresOfInstitutionFood: "",
-                nutritionalFeaturesFood: "",
+                servicesFood: [],
+                typesFood: [],
+                dishesFood: [],
+                featuresOfInstitutionFood: [],
+                nutritionalFeaturesFood: [],
                 descriptionLeisure: "",
-                waterLeisure: "",
-                winterLeisure: "",
-                extremeLeisure: "",
-                landLeisure: "",
+                waterLeisure: [],
+                winterLeisure: [],
+                extremeLeisure: [],
+                landLeisure: [],
                 descriptionRestingPlaces: "",
               }}
               onSubmit={values => handleSubmitValues(values)}>
@@ -113,7 +211,7 @@ export default function Home() {
                       required
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.email}
+                      value={values.email.value}
                       className={errors.email && touched.email ? styles.inputError : ""}
                   />
                   {touched.email && errors.email && (
@@ -127,7 +225,7 @@ export default function Home() {
                       required
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.companyName}
+                      value={values.companyName.value}
                       className={errors.companyName && touched.companyName ? styles.inputError : ""}
                   />
                   {touched.companyName && errors.companyName && (
@@ -270,31 +368,36 @@ export default function Home() {
                       <p className={styles.errorValidation}>{errors.media}</p>
                   )}
                   <div className={s.checkboxBlock}>
-                    <h2 className={s.checkboxTitle}>В какой категории вы оказываете услугу? Можете выбрать несколько вариантов</h2>
+                    <h2 className={s.checkboxTitle}>В какой категории вы оказываете
+                      услугу? Можете выбрать несколько вариантов</h2>
                     <div className={s.checkboxesContainer}>
                       <div className={s.checkboxContainer}>
-                        <Field className={s.checkbox} id="residence" type="checkbox" onClick={() => setVisibleResidenceBlock(!visibleResidenceBlock)}
+                        <Field className={s.checkbox} id="residence" type="checkbox"
+                               onClick={() => setVisibleResidenceBlock(!visibleResidenceBlock)}
                                name="checkedCategory"
                                value={"Проживание(отели,хостелы,глэмпинги,частное и т.д.)"}/>
                         <label className={s.checkboxLabel}
                                htmlFor="residence">{"Проживание(отели,хостелы,глэмпинги,частное и т.д.)"}</label>
                       </div>
                       <div className={s.checkboxContainer}>
-                        <Field className={s.checkbox} id="food" type="checkbox" onClick={() => setVisibleFoodBlock(!visibleFoodBlock)}
+                        <Field className={s.checkbox} id="food" type="checkbox"
+                               onClick={() => setVisibleFoodBlock(!visibleFoodBlock)}
                                name="checkedCategory"
                                value={"Питание (рестораны,кафе,быстрый перекус,кофейни,бары и т.д.)"}/>
                         <label className={s.checkboxLabel}
                                htmlFor="food">{"Питание (рестораны,кафе,быстрый перекус,кофейни,бары и т.д.)"}</label>
                       </div>
                       <div className={s.checkboxContainer}>
-                        <Field className={s.checkbox} id="leisure" type="checkbox" onClick={() => setVisibleLeisureBlock(!visibleLeisureBlock)}
+                        <Field className={s.checkbox} id="leisure" type="checkbox"
+                               onClick={() => setVisibleLeisureBlock(!visibleLeisureBlock)}
                                name="checkedCategory"
                                value={"Активный отдых (квадроциклы,походы,рафтинг,прогулки на конях и т.д.)"}/>
                         <label className={s.checkboxLabel}
                                htmlFor="leisure">{"Активный отдых (квадроциклы,походы,рафтинг,прогулки на конях и т.д.)"}</label>
                       </div>
                       <div className={s.checkboxContainer}>
-                        <Field className={s.checkbox} id="restingPlaces" type="checkbox" onClick={() => setVisibleRestingPlacesBlock(!visibleRestingPlacesBlock)}
+                        <Field className={s.checkbox} id="restingPlaces" type="checkbox"
+                               onClick={() => setVisibleRestingPlacesBlock(!visibleRestingPlacesBlock)}
                                name="checkedCategory"
                                value={"Места отдыха (термальные источники,беседки,бани, бассейны и т.д.)"}/>
                         <label className={s.checkboxLabel}
@@ -310,18 +413,24 @@ export default function Home() {
                                           isValid={isValid}
                                           touched={touched}/>}
 
-                  {visibleFoodBlock && <FoodComponent handleChange={handleChange} handleBlur={handleBlur}
-                                  handleSubmit={handleSubmit} values={values}
-                                  errors={errors} isValid={isValid} touched={touched}/>}
-                  {visibleLeisureBlock && <LeisureComponent handleChange={handleChange} handleBlur={handleBlur}
-                                     handleSubmit={handleSubmit}
-                                     values={values} errors={errors} isValid={isValid}
+                  {visibleFoodBlock &&
+                      <FoodComponent handleChange={handleChange} handleBlur={handleBlur}
+                                     handleSubmit={handleSubmit} values={values}
+                                     errors={errors} isValid={isValid}
                                      touched={touched}/>}
-                  {visibleRestingPlacesBlock && <RestingPlacesComponent handleChange={handleChange}
-                                           handleBlur={handleBlur}
-                                           handleSubmit={handleSubmit} values={values}
-                                           errors={errors} isValid={isValid}
-                                           touched={touched}/>}
+                  {visibleLeisureBlock && <LeisureComponent handleChange={handleChange}
+                                                            handleBlur={handleBlur}
+                                                            handleSubmit={handleSubmit}
+                                                            values={values}
+                                                            errors={errors}
+                                                            isValid={isValid}
+                                                            touched={touched}/>}
+                  {visibleRestingPlacesBlock &&
+                      <RestingPlacesComponent handleChange={handleChange}
+                                              handleBlur={handleBlur}
+                                              handleSubmit={handleSubmit} values={values}
+                                              errors={errors} isValid={isValid}
+                                              touched={touched}/>}
                   <InputBlock
                       type="otherInformation"
                       name="otherInformation"
