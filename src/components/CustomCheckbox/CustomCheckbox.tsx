@@ -1,14 +1,17 @@
 import styles from "./CustomCheckbox.module.css";
 import {FC} from "react";
 import {Field} from "formik";
+import {CategoryOptionsType} from "@/pages";
 
 type CustomCheckboxPropsType = {
-  options: string[]
+  options: CategoryOptionsType[]
   title: string
+  name: any[]
   required?: boolean
 }
 
 export const CustomCheckbox: FC<CustomCheckboxPropsType> = ({
+                                                              name,
                                                               options,
                                                               title,
                                                               required, ...restProps
@@ -18,16 +21,13 @@ export const CustomCheckbox: FC<CustomCheckboxPropsType> = ({
         <h2 className={styles.checkboxTitle}>{title}</h2>
         <div className={styles.checkboxesContainer}>
           {options.map((option, index) => {
-            return <div key={index} className={styles.checkboxContainer}>
-              <Field className={styles.checkbox} id="formBox" type="checkbox" name="checkedCategory" value={option} />
+            return <div key={option.id} className={styles.checkboxContainer}>
+              <Field className={styles.checkbox} id="formBox" type="checkbox" name={name}
+                     value={option.title}/>
               <label className={styles.checkboxLabel}
-                     htmlFor="formBox">{option}</label>
+                     htmlFor="formBox">{option.title}</label>
             </div>;
           })}
-          <div className={styles.checkboxContainer}>
-            <Field className={styles.checkbox} id="formBox" type="checkbox" name="checkedCategory" value='Другое' />
-            <label className={styles.checkboxLabel} htmlFor="formBox">Другое</label>
-          </div>
         </div>
       </div>
   );
