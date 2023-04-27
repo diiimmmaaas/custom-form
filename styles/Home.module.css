@@ -22,7 +22,7 @@
 }
 
 .headerTitle {
-  font-family: 'docs-Roboto';
+  font-family: 'Roboto';
   font-weight: 400;
   font-size: 24pt;
   line-height: 1.25;
@@ -32,7 +32,7 @@
 }
 
 .headerDescription {
-  font-family: 'docs-Roboto';
+  font-family: 'Roboto';
   font-weight: 400;
   font-size: 11pt;
   line-height: 1.5;
@@ -51,11 +51,11 @@
 
 .submitBtn {
   margin-top: 30px;
-  background: #FF3F00;
+  background: #3d8a3b;
   border-radius: 5px;
   box-shadow: 0px 4px 32px rgba(7, 8, 14, 0.1);
   width: 400px;
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -72,7 +72,7 @@
   border-radius: 5px;
   box-shadow: 0px 4px 32px rgba(7, 8, 14, 0.1);
   width: 400px;
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -101,10 +101,15 @@
   page-break-inside: avoid;
   word-wrap: break-word;
   margin-top: 22px;
+  font-family: 'Roboto';
 }
 
 .list {
   padding: 24px;
 }
 
-
+@media screen and (max-width: 800px) {
+  .container {
+    width: 98%;
+  }
+}
