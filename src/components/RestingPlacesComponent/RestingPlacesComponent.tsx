@@ -24,17 +24,18 @@ const RestingPlacesComponent: FC<RestingPlacesComponentPropsType> = ({
                                                              }) => {
   return (
       <div className={styles.restingPlacesBlock}>
+        <h2 className='subtitleCategory'>Дополнительные вопросы к категории "Места отдыха"</h2>
         <InputBlock
             required
             type="descriptionRestingPlaces"
             name="descriptionRestingPlaces"
             placeholder="Введите данные"
             title="Опишите подробно:
-Какие именно вы оказываете услуги/
-Если услуг много,расписать каждую/
-Написать расписание/
-Опишите в чём ваше преимущество перед конкурентами/
-Техника безопасности"
+Какие именно вы оказываете услуги.
+Если услуг много,расписать каждую.
+Написать расписание.
+Опишите в чём ваше преимущество перед конкурентами.
+Техника безопасности."
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.descriptionRestingPlaces}

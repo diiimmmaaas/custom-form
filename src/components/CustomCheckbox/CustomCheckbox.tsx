@@ -6,7 +6,7 @@ import {CategoryOptionsType} from "@/pages";
 type CustomCheckboxPropsType = {
   options: CategoryOptionsType[]
   title: string
-  name: any[]
+  name: any[] | string
   required?: boolean
 }
 

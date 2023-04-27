@@ -24,13 +24,14 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
                                                              }) => {
   return (
       <div className={styles.residenceBlock}>
+        <h2 className='subtitleCategory'>Дополнительные вопросы к категории "Проживание"</h2>
         <InputBlock
             required
             type="typeOfLocation"
             name="typeOfLocation"
             placeholder="Введите данные"
             title="Какой у вас тип размещения
-(гостиница,отель,глэмпинг,хостел,кемпинг,туристическая база,домики и тд.д.)(в категории Проживание)"
+(гостиница,отель,глэмпинг,хостел,кемпинг,туристическая база,домики и тд.д.)(в категории Проживание)."
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.typeOfLocation}
@@ -45,14 +46,14 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
             name="descriptionResidence"
             placeholder="Введите данные"
             title="Подробно опишите:
--Как давно вы работаете, если давно, обновлялся ли номерной
--Что есть у вас территории(бассейн, водоем, детская площадка, беседки, мангальная зона, баня, SPA, ресторан, кафе)
--Категория звездности, категории номерного фонда
--Оснащени номеров
--Дополнительные услуги
--В чем ваше преимущество перед вашими конкурентами
-Расстояние до достопримечательностей
-Максимально подробное описание ваших услуг (в категории Проживание)"
+-Как давно вы работаете, если давно, обновлялся ли номерной.
+-Что есть у вас территории(бассейн, водоем, детская площадка, беседки, мангальная зона, баня, SPA, ресторан, кафе).
+-Категория звездности, категории номерного фонда.
+-Оснащени номеров.
+-Дополнительные услуги.
+-В чем ваше преимущество перед вашими конкурентами.
+Расстояние до достопримечательностей.
+Максимально подробное описание ваших услуг (в категории Проживание)."
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.descriptionResidence}
@@ -66,7 +67,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
             type="scheduleResidence"
             name="scheduleResidence"
             placeholder="Введите данные"
-            title="Укажите часы работы стойки регистрации/ Часы заезда и выезда/ Услуга РАННИЙ ЗАЕЗД/ПОЗДНИЙ ВЫЕЗД (в категории Проживание)"
+            title="Укажите часы работы стойки регистрации/ Часы заезда и выезда/ Услуга РАННИЙ ЗАЕЗД/ПОЗДНИЙ ВЫЕЗД (в категории Проживание)."
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.scheduleResidence}
@@ -77,8 +78,8 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         )}
         <CustomCheckbox
             name='servicesResidence'
-            title="Далее отметьте услуги, которые вы оказываете
-Данные услуги будут отображаться в фильтрах, по которым ваш клиент сможет вас найти (в категории Проживание)"
+            title="Далее отметьте услуги, которые вы оказываете.
+Данные услуги будут отображаться в фильтрах, по которым ваш клиент сможет вас найти (в категории Проживание)."
             options={[
               {id: 1, title: "Верховая езда"},
               {id: 2, title: "Зал для занятия йогой"},
@@ -91,7 +92,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         />
         <CustomCheckbox
             name='waterProceduresResidence'
-            title="Водные процедуры (в категории Проживание)"
+            title="Водные процедуры (в категории Проживание)."
             options={[
               {id: 1, title: "Бассейн открытый"},
               {id: 2, title: "Бассейн крытый"},
@@ -102,7 +103,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         />
         <CustomCheckbox
             name='rentResidence'
-            title="Прокат (в категории Проживание)"
+            title="Прокат (в категории Проживание)."
             options={[
               {id: 1, title: "Прокат велосипедов"},
               {id: 2, title: "Прокат горнолыжного снаряжения"},
@@ -111,7 +112,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         />
         <CustomCheckbox
             name='foodResidence'
-            title="Питание (в категории Проживание)"
+            title="Питание (в категории Проживание)."
             options={[
               {id: 1, title: "Ресторан"},
               {id: 2, title: "Кофеварка/чайник"},
@@ -122,7 +123,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         />
         <CustomCheckbox
             name='transferResidence'
-            title="Трансфер (в категории Проживание)"
+            title="Трансфер (в категории Проживание)."
             options={[
               {id: 1, title: "Бесплатная парковка"},
               {id: 2, title: "Есть трансфер"},
@@ -132,7 +133,7 @@ const ResidenceComponent: FC<ResidenceComponentPropsType> = ({
         />
         <CustomCheckbox
             name='attendanceResidence'
-            title="Услуги (в категории Проживание)"
+            title="Услуги (в категории Проживание)."
             options={[
               {id: 1, title: "Бесплатный WI-FI"},
               {id: 2, title: "Лобби/бар"},

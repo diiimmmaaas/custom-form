@@ -10,6 +10,11 @@ body {
   overflow-x: hidden;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -18,4 +23,10 @@ a {
 input {
   outline: 0;
   border: none;
+}
+
+.subtitleCategory {
+  margin-top: 30px;
+  color: #028959;
+  font-family: 'Roboto';
 }

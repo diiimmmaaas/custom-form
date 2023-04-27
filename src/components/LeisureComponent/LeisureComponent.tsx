@@ -24,17 +24,18 @@ const LeisureComponent: FC<LeisureComponentPropsType> = ({
                                                              }) => {
   return (
       <div className={styles.leisureBlock}>
+        <h2 className='subtitleCategory'>Дополнительные вопросы к категории "Активный отдых"</h2>
         <InputBlock
             required
             type="descriptionLeisure"
             name="descriptionLeisure"
             placeholder="Введите данные"
             title="Опишите подробно:
-Какие именно вы оказываете услуги
-Если услуг много,расписать каждую
-Написать расписание
-Опишите в чём ваше преимущество перед конкурентами
-Техника безопасности (в категории Активный отдых)"
+Какие именно вы оказываете услуги.
+Если услуг много,расписать каждую.
+Написать расписание.
+Опишите в чём ваше преимущество перед конкурентами.
+Техника безопасности (в категории Активный отдых)."
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.descriptionLeisure}
