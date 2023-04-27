@@ -211,7 +211,7 @@ export default function Home() {
                       required
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.email.value}
+                      value={values.email}
                       className={errors.email && touched.email ? styles.inputError : ""}
                   />
                   {touched.email && errors.email && (
@@ -225,7 +225,7 @@ export default function Home() {
                       required
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.companyName.value}
+                      value={values.companyName}
                       className={errors.companyName && touched.companyName ? styles.inputError : ""}
                   />
                   {touched.companyName && errors.companyName && (
